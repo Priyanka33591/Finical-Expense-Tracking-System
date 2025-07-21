@@ -1,19 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { handleError } from '../utils';
+import './ExpenseForm.css'; // ✅ Import CSS
 
 function ExpenseForm({ addTransaction }) {
-
     const [expenseInfo, setExpenseInfo] = useState({
         amount: '',
         text: ''
-    })
+    });
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        const copyExpenseInfo = { ...expenseInfo };
-        copyExpenseInfo[name] = value;
-        setExpenseInfo(copyExpenseInfo);
-    }
+        setExpenseInfo({ ...expenseInfo, [name]: value });
+    };
 
     const addExpenses = (e) => {
         e.preventDefault();
@@ -23,14 +21,14 @@ function ExpenseForm({ addTransaction }) {
             return;
         }
         addTransaction(expenseInfo);
-        setExpenseInfo({ amount: '', text: '' })
-    }
+        setExpenseInfo({ amount: '', text: '' });
+    };
 
     return (
-        <div className='container'>
-            <h1>Expense Tracker</h1>
-            <form onSubmit={addExpenses}>
-                <div>
+        <div className='expense-container'>
+            <h1 className='expense-title'>Expense Tracker</h1>
+            <form className='expense-form' onSubmit={addExpenses}>
+                <div className='expense-input-group'>
                     <label htmlFor='text'>Expense Detail</label>
                     <input
                         onChange={handleChange}
@@ -40,7 +38,7 @@ function ExpenseForm({ addTransaction }) {
                         value={expenseInfo.text}
                     />
                 </div>
-                <div>
+                <div className='expense-input-group'>
                     <label htmlFor='amount'>Amount</label>
                     <input
                         onChange={handleChange}
@@ -50,10 +48,10 @@ function ExpenseForm({ addTransaction }) {
                         value={expenseInfo.amount}
                     />
                 </div>
-                <button type='submit'>Add Expense</button>
+                <button className='expense-btn' type='submit'>Add Expense</button>
             </form>
         </div>
-    )
+    );
 }
 
-export default ExpenseForm
+export default ExpenseForm;

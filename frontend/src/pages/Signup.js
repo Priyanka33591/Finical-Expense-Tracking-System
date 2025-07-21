@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify';
 import { APIUrl, handleError, handleSuccess } from '../utils';
+import "./Auth.css";
 
 function Signup() {
 
@@ -54,10 +55,9 @@ function Signup() {
         }
     }
     return (
-        <div className='container'>
-            <h1>Signup</h1>
+        <div className='container-auth'>
             <form onSubmit={handleSignup}>
-                <div>
+                <div><h1>Signup</h1>
                     <label htmlFor='name'>Name</label>
                     <input
                         onChange={handleChange}

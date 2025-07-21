@@ -57,10 +57,11 @@ function Login() {
     }
 
     return (
-        <div className='container'>
-            <h1>Login</h1>
+        <div className='container-auth'>
+            
             <form onSubmit={handleLogin}>
                 <div>
+                    <h1>Login</h1>
                     <label htmlFor='email'>Email</label>
                     <input
                         onChange={handleChange}

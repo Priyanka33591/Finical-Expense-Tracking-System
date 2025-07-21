@@ -1,0 +1,168 @@
+/* Base Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+}
+
+/* Full screen layout */
+.container-auth {
+  display: flex;
+  min-height: 100vh;
+  padding: 0;
+  
+}
+
+.container-auth::before {
+  content: '';
+  flex: 0.6;
+  background: url('https://www.mindinventory.com/blog/wp-content/uploads/2021/06/expense-tracking-app.webp') no-repeat center center;
+  background-size: cover;
+
+}
+
+/* Form wrapper */
+.container-auth form {
+    min-height: 80vh;
+  flex: 1;
+   margin: 30px auto;
+  max-width: 450px;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.5s ease-in-out;
+}
+
+/* Heading */
+.container-auth h1 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2d3436;
+}
+
+/* Label */
+.container-auth label {
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Input */
+.container-auth input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  background-color: #f8f9fb;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.container-auth input:focus {
+  border-color: #4a6fa5;
+  background-color: #fff;
+}
+
+/* Button */
+.container-auth button {
+  width: 100%;
+  /* padding: 12px; */
+  padding: 12px 14px;
+  font-size: 15px;
+  border: none;
+  background-color: #4a6fa5;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.container-auth button:hover {
+  background-color: #3b5c88;
+}
+
+/* Bottom text */
+.container-auth span {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #555;
+}
+
+.container-auth span a {
+  color: #4a6fa5;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.container-auth span a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* 🔁 Responsive layout for tablets and smaller */
+@media screen and (max-width: 992px) {
+  .container-auth {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .container-auth::before {
+    content: none; /* remove left image for small devices */
+  }
+
+  .container-auth form {
+    max-width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    padding: 40px 30px;
+  }
+}
+
+/* 🔁 Mobile small adjustments */
+@media screen and (max-width: 576px) {
+  .container-auth form {
+    padding: 30px 20px;
+  }
+
+  .container-auth h1 {
+    font-size: 24px;
+  }
+
+  .container-auth button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .container-auth span {
+    font-size: 13px;
+  }
+
+  .container-auth input {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+}

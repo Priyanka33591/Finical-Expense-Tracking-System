@@ -1,0 +1,101 @@
+/* Container styling */
+.expense-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px 40px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeSlide 0.5s ease-in-out;
+}
+
+/* Heading */
+.expense-title {
+  text-align: center;
+  color: #2f3542;
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+/* Form */
+.expense-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Input group */
+.expense-input-group {
+  margin-bottom: 20px;
+}
+
+.expense-input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #57606f;
+}
+
+.expense-input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f1f3f6;
+  transition: 0.3s;
+}
+
+.expense-input-group input:focus {
+  border-color: #3742fa;
+  background-color: #ffffff;
+  outline: none;
+}
+
+/* Button */
+.expense-btn {
+  background-color: #3742fa;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.expense-btn:hover {
+  background-color: #2f35cc;
+}
+
+/* Animation */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .expense-container {
+    padding: 20px;
+  }
+
+  .expense-title {
+    font-size: 24px;
+  }
+
+  .expense-btn {
+    font-size: 14px;
+  }
+
+  .expense-input-group input {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+}
