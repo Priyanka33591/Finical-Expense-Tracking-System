@@ -7,6 +7,7 @@ import ExpenseDetails from "./ExpenseDetails";
 import ExpenseForm from "./ExpenseForm";
 import { Pie } from "react-chartjs-2";
 import PieChart from "./PieChart";
+import PieChart2 from "./PieChart2";
 
 function Home() {
   const [loggedInUser, setLoggedInUser] = useState("");
@@ -167,6 +168,7 @@ function Home() {
       </div> */}
 
       <PieChart incomeAmt={incomeAmt} expenseAmt={expenseAmt} />
+      <PieChart2 expenses={expenses} />
     </div>
   );
 }
